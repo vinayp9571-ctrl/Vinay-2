@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You 🤍</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffd1dc);
+      background-size: 300% 300%;
+      animation: gradientMove 12s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .box {
+      background: rgba(255, 255, 255, 0.92);
+      padding: 36px;
+      border-radius: 24px;
+      text-align: center;
+      max-width: 360px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+    }
+
+    p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 18px;
+      font-style: italic;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 22px;
+    }
+
+    button {
+      padding: 12px 26px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin: 10px;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    #yes {
+      background: linear-gradient(135deg, #ff4d6d, #ff1e56);
+      color: white;
+      box-shadow: 0 6px 18px rgba(255,77,109,0.5);
+    }
+
+    #no {
+      background: #ced4da;
+      position: absolute;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-name {
+      animation: fadeIn 2.2s ease forwards;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <p>From an idiot to the girl who thinks I don’t love her — but I love you. Endlessly.</p>
+
+    <h1>Will you be my Valentine? 🤍❤️</h1>
+
+    <button id="yes" onclick="yesClick()">YES ✨</button>
+    <button id="no" onmouseover="moveNo()">NO</button>
+  </div>
+
+  <script>
+    function moveNo() {
+      const noBtn = document.getElementById("no");
+      noBtn.style.left = Math.random() * 80 + "vw";
+      noBtn.style.top = Math.random() * 80 + "vh";
+    }
+
+    function yesClick() {
+      document.body.innerHTML = `
+        <div style="
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          height:100vh;
+          text-align:center;
+          background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffd1dc);
+          background-size:300% 300%;
+          animation: gradientMove 12s ease infinite;
+          padding:20px;
+        ">
+          <div>
+            <h1 style="color:white;font-size:40px;line-height:1.4;">
+              I love you 
+              <span class="fade-name" style="color:#fff;">DURVAA</span> ❤️<br><br>
+              Endlessly 🤍✨
+            </h1>
+            <div style="font-size:52px;margin-top:12px;">
+              🐼
+            </div>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
